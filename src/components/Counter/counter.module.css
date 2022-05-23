@@ -1,0 +1,6 @@
+.counter {
+  /* TODO */
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}

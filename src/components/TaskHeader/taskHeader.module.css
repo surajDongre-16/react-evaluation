@@ -1,0 +1,9 @@
+.taskHeader {
+  /* Sample */
+  width: 300px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
