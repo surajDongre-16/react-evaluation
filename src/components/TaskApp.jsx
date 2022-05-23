@@ -3,21 +3,25 @@ import React,{useState} from "react";
 import styles from "./taskApp.module.css";
 import TaskHeader from "./TaskHeader/TaskHeader";
 import AddTask from "./AddTask/AddTask"
-import Task from "./Task/Task";
+import Tasks from "./Tasks/Tasks";
 import tasks from "../data/tasks.json"
 
 const TaskApp = () => {
   // NOTE: do not delete `data-cy` key value pair
 
-  const [todos,setTodo]=useState([])
+
+  const [todos,setTodo]=useState(tasks)
 
   const addTodo=(newTodo)=>{
     setTodo([...todos,{
       id:Date.now(),
-      value:newTodo,
+      text:newTodo,
       count:1
     }])
-    
+  }
+  const remove=(id)=>{
+    console.log(id)
+    setTodo(todos.filter((el)=> el.id !==id))
   }
 
   return (
@@ -28,7 +32,7 @@ const TaskApp = () => {
       {/* Add Task */}
       <AddTask addTodo={addTodo}/>
       {/* Tasks */}
-      <Task tasks={tasks} todos={todos} />
+      <Tasks key={todos.id} todos={todos} remove={remove}/>
     </div>
   );
 };

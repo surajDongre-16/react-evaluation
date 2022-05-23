@@ -12,7 +12,7 @@ const AddTask = ({addTodo}) => {
         setValue(e.target.value)
       )} />
       <button className={styles.btn} data-cy="add-task-button" onClick={()=>{
-        console.log(value)
+        // console.log(value)
         addTodo(value)
         setValue("")
       }}>+</button>
